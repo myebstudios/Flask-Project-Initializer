@@ -79,6 +79,8 @@ Window {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 30
                 anchors.horizontalCenter: parent.horizontalCenter
+
+                onClicked: backend.sayHello("Fildine")
             }
 
         }

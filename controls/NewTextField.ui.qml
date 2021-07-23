@@ -5,7 +5,7 @@ Item {
     width: 240
     height: 32
 
-    property string value: ''
+    property string value: undefined
     property string placeholderText: "Enter text here..."
 
     Rectangle {
