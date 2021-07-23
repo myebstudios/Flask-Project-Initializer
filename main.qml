@@ -56,12 +56,31 @@ Window {
                 placeholderText: "Description"
             }
 
+            NewSwitch {
+                id: switch1
+                anchors.top: projectDescriptionInput.bottom
+                anchors.topMargin: 10
+                anchors.left:  parent.left
+                anchors.leftMargin: 30
+                placeholder: "Blueprint project"
+            }
+
+            NewSwitch {
+                id: switch2
+                anchors.top: switch1.bottom
+                anchors.topMargin: 10
+                anchors.left:  parent.left
+                anchors.leftMargin: 30
+                placeholder: "Initialize Git repository"
+            }
+
             NewButton {
                 text: "Create project"
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 30
                 anchors.horizontalCenter: parent.horizontalCenter
             }
+
         }
 
 
