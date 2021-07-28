@@ -2,10 +2,11 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
+    id: inputField
     width: 240
     height: 112
 
-    property string text: ''
+    property string value: ''
     property string placeholderText: "Enter text here..."
 
     Rectangle {
@@ -26,24 +27,32 @@ Item {
         }
 
         TextEdit {
-            id: textEdit
-            color: "#ffffff"
-            anchors.fill: parent
-            leftPadding: 10
-            topPadding: 10
-            font.pixelSize: 14
-            font.family: "Segoe UI Variable Static small"
-
-            Text {
-
-                font.pixelSize: 14
-                font.family: "Segoe UI Variable Static small"
-                text: placeholderText
-                color: "#b3ffffff"
-                visible: !textEdit.text && !textEdit.activeFocus
+                id: textEdit
+                color: "#ffffff"
+                anchors.fill: parent
                 leftPadding: 10
                 topPadding: 10
+                font.pixelSize: 14
+                font.family: "Segoe UI Variable Static small"
+                wrapMode: TextEdit.Wrap
+                text: value
+
+                Text {
+
+                    font.pixelSize: 14
+                    font.family: "Segoe UI Variable Static small"
+                    text: placeholderText
+                    color: "#b3ffffff"
+                    visible: !textEdit.text && !textEdit.activeFocus
+                    leftPadding: 10
+                    topPadding: 10
+                }
             }
-        }
+
+            Binding {
+                target: inputField;
+                property: "value";
+                value: textEdit.text;
+            }
     }
 }

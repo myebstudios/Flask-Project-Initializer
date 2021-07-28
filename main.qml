@@ -4,6 +4,7 @@ import QtQuick.Window 2.15
 import "controls"
 
 Window {
+    id: app
     width: 300
     height: 400
     visible: true
@@ -24,6 +25,7 @@ Window {
                 id: heading
                 color: "#ffffff"
                 text: qsTr("START A NEW FLASK PROJECT")
+                // text: projectTitleInput.value
                 font.family: "Segoe UI Variable Static Text"
                 font.pixelSize: 14
                 font.bold: true
@@ -61,7 +63,7 @@ Window {
                 anchors.top: projectDescriptionInput.bottom
                 anchors.topMargin: 10
                 anchors.left:  parent.left
-                anchors.leftMargin: 30
+                anchors.leftMargin: projectTitleInput.x
                 placeholder: "Blueprint project"
             }
 
@@ -70,7 +72,7 @@ Window {
                 anchors.top: switch1.bottom
                 anchors.topMargin: 10
                 anchors.left:  parent.left
-                anchors.leftMargin: 30
+                anchors.leftMargin: projectTitleInput.x
                 placeholder: "Initialize Git repository"
             }
 
@@ -80,7 +82,8 @@ Window {
                 anchors.bottomMargin: 30
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                onClicked: backend.sayHello("Fildine")
+                onClicked: backend.createProject(`${projectTitleInput.value} | ${projectDescriptionInput.value}`)
+                // onClicked: backend.sayHello(['Esoe', 'Bidje', 'Fildine'])
             }
 
         }

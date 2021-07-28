@@ -9,9 +9,13 @@ from PySide6.QtQml import QQmlApplicationEngine
 
 class Bridge(QObject):
 
+    @Slot(list, result=str)
+    def sayHello(self, names):
+        print(names)
+    
     @Slot(str, result=str)
-    def sayHello(self, name):
-        print(name)
+    def createProject(self, title):
+        print(f'Creating project: {title}')
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)

@@ -1,3 +1,3 @@
 {
-    "files": ["fonts/Segoe-UI-Variable-Static-Text.ttf","fonts/Segoe-UI-Variable-Static-Small.ttf","main.qml","main.py","fonts/Segoe-UI-Variable-Static-Text-Bold.ttf"]
+    "files": ["main.qml","fonts/Segoe-UI-Variable-Static-Small.ttf","fonts/Segoe-UI-Variable-Static-Text.ttf","main.py"]
 }
